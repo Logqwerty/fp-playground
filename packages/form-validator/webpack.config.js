@@ -1,11 +1,12 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "[name].[chunkhash].js",
+    filename: "[name].[hash].js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
@@ -21,7 +22,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./template/index.html",
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
-  mode: "production",
-  optimization: { minimizer: [] },
+  devServer: {
+    contentBase: "./dist",
+    hot: true,
+    port: 9000,
+  },
+  devtool: "inline-source-map",
 };
