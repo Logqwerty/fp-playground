@@ -1,0 +1,14 @@
+{
+  "name": "fp-playground",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": "https://github.com/Logqwerty/fp-playground.git",
+  "author": "Logqwerty <inm2790@gmail.com>",
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "lerna": "^3.22.0"
+  }
+}
