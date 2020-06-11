@@ -2,7 +2,10 @@ import * as R from "ramda";
 
 const $ = {};
 
-$.qs = (sel, parent = document) => parent.querySelector(sel);
+$.qs = (sel, parent) =>
+  parent ? parent.querySelector(sel) : document.querySelector(sel);
+
+$.find = R.curry($.qs);
 
 $.makeEl = (html) => {
   const wrapper = document.createElement("div");
