@@ -1,4 +1,4 @@
-import { curry } from "ramda";
+import * as R from "ramda";
 
 const $ = {};
 
@@ -10,6 +10,8 @@ $.makeEl = (html) => {
   return wrapper.children[0];
 };
 
-$.append = curry((parent, children) => parent.appendChild(children));
+$.append = R.curry((parent, children) => parent.appendChild(children));
+
+$.on = R.curry((event, handler, el) => el.addEventListener(event, handler));
 
 export default $;
