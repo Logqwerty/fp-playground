@@ -14,7 +14,7 @@ const template = `
     <input id="password" name="password" type="password">
   </div>
   <div class="form-control">
-    <label for="password-confirmation">Password Confirm</label>
+    <label for="password-confirm">Password Confirm</label>
     <input id="password-confirm" name="password-confirm" type="password">
   </div>
   <button type="submit">Join</button>
