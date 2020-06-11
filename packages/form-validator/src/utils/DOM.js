@@ -17,4 +17,10 @@ $.append = R.curry((parent, children) => parent.appendChild(children));
 
 $.on = R.curry((event, handler, el) => el.addEventListener(event, handler));
 
+$.addClass = R.curry((clazz, el) => el.classList.add(clazz));
+
+$.removeClass = R.curry((clazz, el) => el.classList.remove(clazz));
+
+$.text = R.curry((text, el) => el.innerText = text);
+
 export default $;
